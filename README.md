@@ -2,6 +2,8 @@
 
 *(I haven't programmed for too long. Thought it would be a good idea to get back into it by coding the Conway's Game of Life in Rust. Could have coded something else but I am not creative enough to think of any worthy project idea.)*
 
+![screenshot](screenshot.png)
+
 ## Purpose
 
 Purpose of this project was to code something in Rust already.
