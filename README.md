@@ -29,7 +29,7 @@ This is just Game of Life, nothing super interesting, but you can:
 
 ## Credits
 
-https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life  
+https://en.wikipedia.org/wiki/Conway's_Game_of_Life  
 https://github.com/PistonDevelopers/Piston-Tutorials/  
 https://github.com/PistonDevelopers/piston-examples  
 
