@@ -12,6 +12,17 @@ const GRID_RES: usize = 32;
 
 const RECT_SIZE: f64 = (WINDOW_SIZE / GRID_RES) as f64;
 
+const NEIGHBOURS: [(i8, i8); 8] = [
+    (-1, -1),
+    (-1, 0),
+    (-1, 1),
+    (0, -1),
+    (0, 1),
+    (1, -1),
+    (1, 0),
+    (1, 1),
+];
+
 pub struct App {
     gl: GlGraphics,
     paused: bool,
@@ -157,26 +168,11 @@ fn main() {
 fn count_neighbours(grid: [[bool; GRID_RES]; GRID_RES], x: usize, y: usize) -> u8 {
     let mut count: u8 = 0;
 
-    let directions: [(i8, i8); 8] = [
-        (-1, -1),
-        (-1, 0),
-        (-1, 1),
-        (0, -1),
-        (0, 1),
-        (1, -1),
-        (1, 0),
-        (1, 1),
-    ];
+    for &(dir_x, dir_y) in &NEIGHBOURS {
+        let neighbour_x: usize = x + dir_x as usize;
+        let neighbour_y: usize = y + dir_y as usize;
 
-    for (dir_x, dir_y) in directions {
-        let neighbour_x: i8 = x as i8 + dir_x;
-        let neighbour_y: i8 = y as i8 + dir_y;
-
-        if (neighbour_x >= 0)
-            && (neighbour_y >= 0)
-            && (neighbour_x < GRID_RES as i8)
-            && (neighbour_y < GRID_RES as i8)
-            && (grid[neighbour_x as usize][neighbour_y as usize])
+        if (neighbour_x < GRID_RES) && (neighbour_y < GRID_RES) && (grid[neighbour_x][neighbour_y])
         {
             count += 1;
         }
