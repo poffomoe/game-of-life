@@ -433,7 +433,7 @@ checksum = "00b0228411908ca8685dba7fc2cdd70ec9990a6e753e89b6ac91a84c40fbaf4b"
 
 [[package]]
 name = "game-of-life"
-version = "1.0.0"
+version = "1.1.0"
 dependencies = [
  "piston",
  "piston2d-graphics",
