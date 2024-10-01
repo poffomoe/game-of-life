@@ -168,7 +168,7 @@ fn main() {
 fn count_neighbours(grid: [[bool; GRID_RES]; GRID_RES], x: usize, y: usize) -> u8 {
     let mut count: u8 = 0;
 
-    for (dir_x, dir_y) in NEIGHBOURS {
+    for &(dir_x, dir_y) in &NEIGHBOURS {
         let neighbour_x: i8 = x as i8 + dir_x;
         let neighbour_y: i8 = y as i8 + dir_y;
 
